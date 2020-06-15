@@ -10,6 +10,7 @@ class Notification extends React.Component{
   buildNotification = () => {
     const { message, type } = this.props.notificationState;
     const { unsetNotification } = this.props
+    document.documentElement.scrollTop = 0;
     return(
       <div className={`notification ${type}`}>
         {timedFunc(unsetNotification, 2000)}
@@ -22,8 +23,6 @@ class Notification extends React.Component{
     const { show } = this.props.notificationState;
     return show ? this.buildNotification() : null;
   }
-
-
 
   render(){
     return(
